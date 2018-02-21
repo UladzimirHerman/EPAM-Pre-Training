@@ -13,8 +13,9 @@ public class PerfectNumber {
         int sum = 0;
 
         if (NumberUtil.isNaturalNumber(number)) {
+            int iteration = number / 2;
 
-            for (int i = 1; i < number; i++) {
+            for (int i = 1; i <= iteration; i++) {
                 if (number % i == 0) {
                     sum += i;
                 }

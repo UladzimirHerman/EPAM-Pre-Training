@@ -6,10 +6,10 @@ import com.gmail.herman.uladzimir.model.util.NumberUtil;
 public class NumberWorker {
 
     public static int getBigNumber(int number) throws NumberNotNaturalException {
-        int bigNum = 1;
+        int bigNum = 0;
 
         if (NumberUtil.isNaturalNumber(number)) {
-            int numberDigits = (int) Math.ceil(Math.log10(number));
+            int numberDigits = (int) Math.ceil(Math.log10(number) + 0.5);
 
             for (int i = 0; i < numberDigits; i++) {
                 if (bigNum < number % 10) {
@@ -139,7 +139,6 @@ public class NumberWorker {
             if (numberDigits == 0) {
                 count = number;
             } else {
-
                 for (int i = 0; i < numberDigits; i++) {
                     if (!strDigits.contains(number % 10 + "")) {
                         strDigits += number % 10 + "";
