@@ -25,7 +25,6 @@ public class DefineCharacter {
         return ch >= 'a' && ch <= 'z';
     }
 
-    //I use method isEnglishAlphabet() to check char in the next methods for the future work with Exceptions
     public static boolean isVowelOne(char ch) {
         boolean vowel = false;
 
