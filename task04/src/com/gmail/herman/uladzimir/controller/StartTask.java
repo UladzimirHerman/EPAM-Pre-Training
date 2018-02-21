@@ -13,9 +13,9 @@ public class StartTask {
         try {
             int num = 214;
             View.print("Sum of digits of " + num + " recursively: " +
-                    SumDigits.findSumDigitsRecursively(num));
+                    SumDigits.countSumDigitsRecursively(num));
             View.print("Sum of digits of " + num + " iteratively: " +
-                    SumDigits.findSumDigitsIteratively(num));
+                    SumDigits.countSumDigitsIteratively(num));
         } catch (NumberNotNaturalException e) {
             View.print(e.getMessage());
         }

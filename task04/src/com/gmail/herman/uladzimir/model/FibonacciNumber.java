@@ -5,7 +5,8 @@ import com.gmail.herman.uladzimir.model.util.NumberUtil;
 
 public class FibonacciNumber {
 
-    public static int findFibonacciNumberRecursively(int number) throws NumberNotNaturalException {
+    public static int findFibonacciNumberRecursively(int number)
+            throws NumberNotNaturalException {
 
         if (NumberUtil.isNaturalNumber(number)) {
             return number > 2 ? findFibonacciNumberRecursively(number - 1) +
@@ -16,7 +17,8 @@ public class FibonacciNumber {
 
     }
 
-    public static int findFibonacciNumberIteratively(int number) throws NumberNotNaturalException {
+    public static int findFibonacciNumberIteratively(int number)
+            throws NumberNotNaturalException {
 
         if (NumberUtil.isNaturalNumber(number)) {
             int sum = 1, nOne = 1, nTwo = 1;

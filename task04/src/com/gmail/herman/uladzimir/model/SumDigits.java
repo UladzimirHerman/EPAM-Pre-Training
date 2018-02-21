@@ -6,22 +6,30 @@ import com.gmail.herman.uladzimir.model.util.NumberUtil;
 
 public class SumDigits {
 
-    public static int findSumDigitsRecursively(int number) throws NumberNotNaturalException {
+    public static int countSumDigitsRecursively(int number) throws NumberNotNaturalException {
 
         if (NumberUtil.isNaturalNumber(number)) {
-            return NumberUtil.countSumDigitsRecursively(number);
+            return number >= 10 ?
+                    number % 10 + countSumDigitsRecursively(number / 10) : number;
         } else {
-            throw new NumberNotNaturalException("SumDigits.findSumDigitsRecursively");
+            throw new NumberNotNaturalException("SumDigits.countSumDigitsRecursively");
         }
 
     }
 
-    public static int findSumDigitsIteratively(int number) throws NumberNotNaturalException {
+    public static int countSumDigitsIteratively(int number) throws NumberNotNaturalException {
 
         if (NumberUtil.isNaturalNumber(number)) {
-            return NumberUtil.countSumDigitsIteratively(number);
+            int sum = 0, numberDigits = (int) Math.ceil(Math.log10(number) + 0.5);
+
+            for (int i = 0; i < numberDigits; i++) {
+                sum += number % 10;
+                number /= 10;
+            }
+
+            return sum;
         } else {
-            throw new NumberNotNaturalException("SumDigits.findSumDigitsIteratively");
+            throw new NumberNotNaturalException("SumDigits.countSumDigitsIteratively");
         }
 
     }
