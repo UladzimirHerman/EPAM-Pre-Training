@@ -14,7 +14,7 @@ public class StartTask {
         trainWorld.createTrainWorld(quantityTrain);
         View.print("Just created world of trains! Amount of trains: " + trainWorld.countTrain());
         View.print("World of trains is empty: " + trainWorld.isEmptyWorld());
-        View.print("All trains:\n" + trainWorld.printDescriptionAllTrain());
+        View.print("All trains:\n" + trainWorld.showAllTrain());
 
         //create clone of train
         int index = 0;
@@ -54,14 +54,14 @@ public class StartTask {
                 " in world of trains: " + trainWorld.checkTrain(newTrain));
 
         View.print("Amount of trains: " + trainWorld.countTrain());
-        View.print("All trains:\n" + trainWorld.printDescriptionAllTrain());
+        View.print("All trains:\n" + trainWorld.showAllTrain());
 
         //delete train by train index
         View.print("Delete train by train index - delete train[" + index + "].");
         View.print("Train for delete: " + trainWorld.getTrainByIndex(index));
         trainWorld.removeTrainByIndex(index);
         View.print("Amount of trains: " + trainWorld.countTrain());
-        View.print("All trains:\n" + trainWorld.printDescriptionAllTrain());
+        View.print("All trains:\n" + trainWorld.showAllTrain());
 
         //find train by train number
         String wrongNumTrain = "0000Z";
@@ -73,7 +73,7 @@ public class StartTask {
         //find trains by diapason wagons
         int min = 15, max = 25;
         View.print("\nFind trains, which have " + min + "-" + max + " wagons:");
-        View.print(trainWorld.printDescriptionAllTrain
+        View.print(trainWorld.showAllTrain
                 (trainWorld.findTrainByDiapasonWagons(min, max)));
 
         //some statistics

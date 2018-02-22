@@ -1,5 +1,8 @@
 package com.gmail.herman.uladzimir.container;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class MyArray<T> {
 
     private T[] array;
@@ -46,7 +49,7 @@ public class MyArray<T> {
         length = array.length;
     }
 
-    public void removeAll(){
+    public void removeAll() {
         T[] newArray = (T[]) new Object[0];
 
         array = newArray.clone();
@@ -72,4 +75,20 @@ public class MyArray<T> {
         return indexOf(o) != -1;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyArray<?> myArray = (MyArray<?>) o;
+        return length == myArray.length &&
+                Arrays.equals(array, myArray.array);
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = Objects.hash(length);
+        result = 31 * result + Arrays.hashCode(array);
+        return result;
+    }
 }

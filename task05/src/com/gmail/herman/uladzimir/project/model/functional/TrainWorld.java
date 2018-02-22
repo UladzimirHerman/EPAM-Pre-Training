@@ -50,7 +50,7 @@ public class TrainWorld {
 
     public Train cloneTrain(Train train) {
 
-        if (train.getClass().getCanonicalName().contains("PassengerTrain")) {
+        if (train instanceof PassengerTrain) {
             return new PassengerTrain((PassengerTrain) train);
         } else {
             return new FreightTrain((FreightTrain) train);
@@ -58,7 +58,7 @@ public class TrainWorld {
 
     }
 
-    public String printDescriptionAllTrain() {
+    public String showAllTrain() {
         String result = "";
 
         for (int i = 0; i < trains.getLength(); i++) {
@@ -68,7 +68,7 @@ public class TrainWorld {
         return result;
     }
 
-    public String printDescriptionAllTrain(Train[] trainArray) {
+    public String showAllTrain(Train[] trainArray) {
         String result = "";
 
         if (trainArray.length > 0) {
@@ -155,7 +155,7 @@ public class TrainWorld {
 
         for (int i = 0; i < trains.getLength(); i++) {
 
-            if (trains.getByIndex(i).getClass().getCanonicalName().contains("PassengerTrain")) {
+            if (trains.getByIndex(i) instanceof PassengerTrain) {
                 passengerTrain = (PassengerTrain) trains.getByIndex(i);
                 temp = passengerTrain.getQuantityWagon() *
                         passengerTrain.getPassengerWagonType().getLengthMeter();
@@ -191,7 +191,7 @@ public class TrainWorld {
 
         for (int i = 0; i < trains.getLength(); i++) {
 
-            if (trains.getByIndex(i).getClass().getCanonicalName().contains("PassengerTrain")) {
+            if (trains.getByIndex(i) instanceof PassengerTrain) {
                 passengerTrain = (PassengerTrain) trains.getByIndex(i);
                 temp = passengerTrain.getQuantityWagon() *
                         passengerTrain.getPassengerWagonType().getLengthMeter();
@@ -227,7 +227,7 @@ public class TrainWorld {
 
         for (int i = 0; i < trains.getLength(); i++) {
 
-            if (trains.getByIndex(i).getClass().getCanonicalName().contains("PassengerTrain")) {
+            if (trains.getByIndex(i) instanceof PassengerTrain) {
                 passengerTrain = (PassengerTrain) trains.getByIndex(i);
                 temp = passengerTrain.getQuantityWagon() *
                         passengerTrain.getPassengerWagonType().getWeightTon();
@@ -263,7 +263,7 @@ public class TrainWorld {
 
         for (int i = 0; i < trains.getLength(); i++) {
 
-            if (trains.getByIndex(i).getClass().getCanonicalName().contains("PassengerTrain")) {
+            if (trains.getByIndex(i) instanceof PassengerTrain) {
                 passengerTrain = (PassengerTrain) trains.getByIndex(i);
                 temp = passengerTrain.getQuantityWagon() *
                         passengerTrain.getPassengerWagonType().getWeightTon();
@@ -299,7 +299,7 @@ public class TrainWorld {
 
         for (int i = 0; i < trains.getLength(); i++) {
 
-            if (trains.getByIndex(i).getClass().getCanonicalName().contains("PassengerTrain")) {
+            if (trains.getByIndex(i) instanceof PassengerTrain) {
                 passengerTrain = (PassengerTrain) trains.getByIndex(i);
                 temp = passengerTrain.getQuantityWagon() *
                         passengerTrain.getPassengerWagonType().getPlacePassenger() *
