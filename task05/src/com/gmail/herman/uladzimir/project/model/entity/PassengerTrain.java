@@ -2,8 +2,11 @@ package com.gmail.herman.uladzimir.project.model.entity;
 
 import com.gmail.herman.uladzimir.project.model.enumeration.PassengerWagonType;
 
+import java.util.Objects;
+
 public class PassengerTrain extends Train {
     private PassengerWagonType passengerWagonType;
+    private int capacityWagon;
     private double ticketPrice;
     private double filling;
 
@@ -11,16 +14,21 @@ public class PassengerTrain extends Train {
     }
 
     public PassengerTrain(String numTrain, String route, int quantityWagon,
-                          PassengerWagonType passengerWagonType, double ticketPrice, double filling) {
-        super(numTrain, route, quantityWagon);
+                          double weightWagon, double lengthWagon,
+                          PassengerWagonType passengerWagonType, int capacityWagon,
+                          double ticketPrice, double filling) {
+        super(numTrain, route, quantityWagon, weightWagon, lengthWagon);
         this.passengerWagonType = passengerWagonType;
+        this.capacityWagon = capacityWagon;
         this.ticketPrice = ticketPrice;
         this.filling = filling;
     }
 
     public PassengerTrain(PassengerTrain o) {
-        super(o.getNumTrain(), o.getRoute(), o.getQuantityWagon());
+        super(o.getNumTrain(), o.getRoute(), o.getQuantityWagon(),
+                o.getWeightWagon(), o.getLengthWagon());
         this.passengerWagonType = o.passengerWagonType;
+        this.capacityWagon = o.capacityWagon;
         this.ticketPrice = o.ticketPrice;
         this.filling = o.filling;
     }
@@ -31,6 +39,14 @@ public class PassengerTrain extends Train {
 
     public void setPassengerWagonType(PassengerWagonType passengerWagonType) {
         this.passengerWagonType = passengerWagonType;
+    }
+
+    public int getCapacityWagon() {
+        return capacityWagon;
+    }
+
+    public void setCapacityWagon(int capacityWagon) {
+        this.capacityWagon = capacityWagon;
     }
 
     public double getTicketPrice() {
@@ -47,6 +63,22 @@ public class PassengerTrain extends Train {
 
     public void setFilling(double filling) {
         this.filling = filling;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PassengerTrain that = (PassengerTrain) o;
+        return Double.compare(that.ticketPrice, ticketPrice) == 0 &&
+                passengerWagonType == that.passengerWagonType;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), passengerWagonType, ticketPrice);
     }
 
     @Override

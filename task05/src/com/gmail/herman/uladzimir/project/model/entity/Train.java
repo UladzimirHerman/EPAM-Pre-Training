@@ -6,20 +6,27 @@ public class Train {
     private String numTrain;
     private String route;
     private int quantityWagon;
+    private double weightWagon;
+    private double lengthWagon;
 
     public Train() {
     }
 
-    public Train(String numTrain, String route, int quantityWagon) {
+    public Train(String numTrain, String route, int quantityWagon,
+                 double weightWagon, double lengthWagon) {
         this.numTrain = numTrain;
         this.route = route;
         this.quantityWagon = quantityWagon;
+        this.weightWagon = weightWagon;
+        this.lengthWagon = lengthWagon;
     }
 
     public Train(Train o) {
         this.numTrain = o.numTrain;
         this.route = o.route;
         this.quantityWagon = o.quantityWagon;
+        this.weightWagon = o.weightWagon;
+        this.lengthWagon = o.lengthWagon;
     }
 
     public String getNumTrain() {
@@ -46,6 +53,22 @@ public class Train {
         this.quantityWagon = quantityWagon;
     }
 
+    public double getWeightWagon() {
+        return weightWagon;
+    }
+
+    public void setWeightWagon(double weightWagon) {
+        this.weightWagon = weightWagon;
+    }
+
+    public double getLengthWagon() {
+        return lengthWagon;
+    }
+
+    public void setLengthWagon(double lengthWagon) {
+        this.lengthWagon = lengthWagon;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,4 +83,5 @@ public class Train {
 
         return Objects.hash(numTrain, route);
     }
+
 }
