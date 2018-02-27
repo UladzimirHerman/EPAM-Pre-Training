@@ -26,7 +26,7 @@ public class MyListQueue<T> extends ListContainer<T> implements Queue<T> {
             throw new QueueIsEmptyException("MyListQueue.peek");
         }
 
-        return list.get(size - 1);
+        return list.get(0);
     }
 
     @Override
