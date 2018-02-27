@@ -1,4 +1,4 @@
-package com.gmail.herman.uladzimir.model.exception;
+package com.gmail.herman.uladzimir.container.exception;
 
 public class StackIsEmptyException extends Exception {
 
