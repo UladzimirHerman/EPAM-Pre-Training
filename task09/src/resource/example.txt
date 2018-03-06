@@ -1,0 +1,6 @@
+What is method overloading in Java?
+Method overloading in Java is a programming concept when programmer declares two methods of the same name but with different method signature, for example, change in the argument list or change in the type of argument.
+Method overloading is a powerful Java programming technique to declare a method which does a similar performance but with a different kind of input.
+One of the most popular examples of method overloading is System out println method which is overloaded to accept all kinds of data types in Java.
+You have println method which takes String, int, float, double or char in output.
+All of those methods are collectively referred as an overloaded method in Java.
